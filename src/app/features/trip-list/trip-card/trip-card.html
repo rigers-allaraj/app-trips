@@ -1,0 +1,14 @@
+<mat-card>
+  <img mat-card-image [src]="trip.thumbnailUrl" [alt]="trip.title">
+  <mat-card-content>
+    <div class="card-header">
+      <h3>{{ trip.title }}</h3>
+      <span class="score-badge" [class]="trip | tripScore">
+        {{ trip | tripScore }}
+      </span>
+    </div>
+    <p><strong>Price:</strong> ${{ trip.price }}</p>
+    <p><strong>Rating:</strong> {{ trip.rating }} / 5</p>
+    <p><strong>Type:</strong> {{ trip.verticalType }}</p>
+  </mat-card-content>
+</mat-card>

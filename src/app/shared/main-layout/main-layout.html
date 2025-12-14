@@ -1,0 +1,21 @@
+<div class="main-layout">
+  <header class="app-header">
+    <div class="header-content">
+      <button mat-icon-button class="back-btn" [routerLink]="['/']" *ngIf="showBackButton">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <div class="app-title">
+        <mat-icon>flight</mat-icon>
+        <h1>App Trips</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-content">
+    <ng-content></ng-content>
+  </main>
+
+  <footer class="app-footer">
+    <p>App Trips © {{ currentYear }}</p>
+  </footer>
+</div>

@@ -1,0 +1,35 @@
+<app-page-container>
+  <div class="header">
+    <div class="controls">
+      <button mat-raised-button color="primary" (click)="goToTripOfTheDay()">
+        Trip of the Day
+      </button>
+
+      <mat-form-field>
+        <mat-label>Sort by</mat-label>
+        <mat-select [value]="sortBy" (selectionChange)="onSortChange($event.value)">
+          <mat-option value="">None</mat-option>
+          <mat-option value="title">Name</mat-option>
+          <mat-option value="price">Price</mat-option>
+          <mat-option value="rating">Rating</mat-option>
+          <mat-option value="creationDate">Date</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <app-loading *ngIf="loading$ | async"></app-loading>
+
+  <div class="trips-grid">
+    <app-trip-card *ngFor="let trip of trips$ | async" [trip]="trip" (click)="onTripClick(trip.id)">
+    </app-trip-card>
+  </div>
+
+<div class="load-more">
+  <button mat-raised-button color="primary" (click)="loadMore()" *ngIf="hasMore">
+    Load More
+  </button>
+  <p *ngIf="!hasMore">No more trips to load</p>
+</div>
+
+</app-page-container>

@@ -1,0 +1,59 @@
+mat-card {
+  cursor: pointer;
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+img {
+  height: 200px;
+  object-fit: cover;
+}
+
+mat-card-content {
+  padding: var(--gap-medium);
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: var(--gap-small);
+    margin-bottom: var(--gap-medium);
+  }
+
+  h3 {
+    margin: 0;
+    flex: 1;
+  }
+
+  .score-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    flex-shrink: 0;
+
+    &.awesome {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    &.good {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+
+    &.average {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  }
+
+  p {
+    margin: var(--gap-small) 0;
+  }
+}

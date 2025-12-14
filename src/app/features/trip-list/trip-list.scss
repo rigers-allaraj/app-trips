@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--gap-medium);
+}
+
+.controls {
+  display: flex;
+  gap: var(--gap-large);
+  align-items: center;
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-large);
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--gap-large);
+}

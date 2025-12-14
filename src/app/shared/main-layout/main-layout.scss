@@ -1,0 +1,57 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: var(--card-background);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--gap-medium);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-medium);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .back-btn {
+    flex-shrink: 0;
+  }
+
+  .app-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    mat-icon {
+      color: #3f51b5;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+  }
+}
+
+.app-content {
+  flex: 1;
+}
+
+.app-footer {
+  text-align: center;
+  padding: var(--gap-medium);
+  background-color: var(--background-light);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 14px;
+}

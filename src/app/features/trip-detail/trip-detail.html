@@ -1,0 +1,28 @@
+<app-page-container>
+  <!-- <button mat-icon-button class="back-btn" color="primary"  (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button> -->
+
+  <app-loading *ngIf="loading$ | async"></app-loading>
+
+  <div *ngIf="trip$ | async as trip" class="detail-layout">
+    <div class="image-side">
+      <img [src]="trip.imageUrl" [alt]="trip.title">
+    </div>
+
+    <div class="content-side">
+      <h1>{{ trip.title }}</h1>
+      <p><strong>Price:</strong> ${{ trip.price }}</p>
+      <p><strong>Rating:</strong> {{ trip.rating }} / 5 ({{ trip.nrOfRatings }} reviews)</p>
+      <p><strong>Type:</strong> {{ trip.verticalType }}</p>
+      <p><strong>CO2:</strong> {{ trip.co2 }} kg</p>
+
+      <h2>Description</h2>
+      <p>{{ trip.description }}</p>
+
+      <mat-chip-set *ngIf="trip.tags.length > 0">
+        <mat-chip *ngFor="let tag of trip.tags">{{ tag }}</mat-chip>
+      </mat-chip-set>
+    </div>
+  </div>
+</app-page-container>
